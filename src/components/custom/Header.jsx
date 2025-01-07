@@ -58,9 +58,10 @@ function Header() {
 
   return (
     <div className=" shadow-md bg-gradient-to-r p-2 from-blue-600 to-purple-700 flex justify-between items-center text-white">
-      <Link to={"/"}>
+      <a href="/">
         <img src="/logo.png" alt="Logo" className="h-20" />
-     </Link>
+     
+     </a>
       <div>
         {user ? (
           <div className="flex items-center">
