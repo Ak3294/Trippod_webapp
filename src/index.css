@@ -16,6 +16,7 @@ a:hover {
 }
 
 body {
+  @apply font-poppins;
 }
 
 h1 {

@@ -4,7 +4,7 @@ import { BsInstagram } from "react-icons/bs";
 
 function Footor() {
   return (
-    <footer className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-12">
+    <footer className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-20">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
