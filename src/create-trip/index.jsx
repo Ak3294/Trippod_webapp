@@ -164,7 +164,7 @@ function CreateTrip() {
                 Where do you want to go?
               </h2>
               <LoadScript
-                googleMapsApiKey="AIzaSyANFwVCiENDIpx4n-pWUBZGjupUrpSl6ck"
+                googleMapsApiKey={import.meta.env.VITE_GOOGLE_PLACE_API_KEY}
                 libraries={["places"]} // Ensure this is an array
               >
                 <StandaloneSearchBox
@@ -190,7 +190,7 @@ function CreateTrip() {
                 type="number"
                 value={formData.noOfDays}
                 min={1}
-                max={5}
+                
                 onChange={(e) => handleInputChange("noOfDays", e.target.value)}
                 className="rounded-md shadow border-gray-300 focus:ring-blue-500 focus:border-blue-500 w-full"
               />
