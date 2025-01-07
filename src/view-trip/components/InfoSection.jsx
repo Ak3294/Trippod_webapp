@@ -26,6 +26,32 @@ function InfoSection({ trip }) {
       setPhotoUrl(PhotoUrl);
     });
   };
+
+  {
+    /* Add this function in the same component */
+  }
+  const handleShare = () => {
+    const url = window.location.href; // Get the current URL
+    const shareData = {
+      title: "Check this out!",
+      text: "I found this amazing page for you:",
+      url: url,
+    };
+
+    if (navigator.share) {
+      // Use Web Share API if available
+      navigator
+        .share(shareData)
+        .then(() => console.log("Shared successfully"))
+        .catch((error) => console.error("Error sharing", error));
+    } else {
+      // Fallback for unsupported browsers
+      navigator.clipboard.writeText(url).then(() => {
+        alert("URL copied to clipboard!");
+      });
+    }
+  };
+
   return (
     <div className="p-5 bg-white rounded-xl shadow-md">
       <img
@@ -53,8 +79,10 @@ function InfoSection({ trip }) {
           </div>
         </div>
 
-        {/* Send Button */}
-        <button className="p-3 bg-blue-600 rounded-full shadow-lg hover:bg-blue-700 transition-all">
+        <button
+          className="p-3 bg-blue-600 rounded-full shadow-lg hover:bg-blue-700 transition-all"
+          onClick={() => handleShare()}
+        >
           <IoIosSend className="text-white text-xl" />
         </button>
       </div>

@@ -9,7 +9,7 @@ function Hotels({ trip }) {
         Hotels Recommendation
       </h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
         {trip?.tripData?.TripPlan?.HotelOptions?.map((hotel, index) => (
           <HotelCard key={hotel.id || index} hotel={hotel} />
         ))}

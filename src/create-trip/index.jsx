@@ -153,48 +153,42 @@ function CreateTrip() {
           you.
         </p>
 
-        <div className="mt-16">
+        <div className="flex flex-wrap items-start gap-4">
           {/* Destination Section */}
-
-          <div className="flex flex-wrap items-start gap-4">
-            {/* Destination Section */}
-
-            <div className="flex-1">
-              <h2 className="text-xl my-3 font-medium text-blue-600">
-                Where do you want to go?
-              </h2>
-              <LoadScript
-                googleMapsApiKey={import.meta.env.VITE_GOOGLE_PLACE_API_KEY}
-                libraries={["places"]} // Ensure this is an array
+          <div className="w-full md:w-1/2">
+            <h2 className="text-lg md:text-xl my-3 font-medium text-blue-600">
+              Where do you want to go?
+            </h2>
+            <LoadScript
+              googleMapsApiKey={import.meta.env.VITE_GOOGLE_PLACE_API_KEY}
+              libraries={["places"]} // Ensure this is an array
+            >
+              <StandaloneSearchBox
+                onLoad={(ref) => (inputRef.current = ref)}
+                onPlacesChanged={handlePlaceChanged}
               >
-                <StandaloneSearchBox
-                  onLoad={(ref) => (inputRef.current = ref)}
-                  onPlacesChanged={handlePlaceChanged}
-                >
-                  <input
-                    type="text"
-                    placeholder="Search for your destination..."
-                    className="p-2 rounded-md shadow border-gray-500 focus:ring-blue-500 focus:border-blue-500 w-full"
-                  />
-                </StandaloneSearchBox>
-              </LoadScript>
-            </div>
+                <input
+                  type="text"
+                  placeholder="Search for your destination..."
+                  className="p-2 rounded-md shadow border-gray-500 focus:ring-blue-500 focus:border-blue-500 w-full"
+                />
+              </StandaloneSearchBox>
+            </LoadScript>
+          </div>
 
-            {/* Trip Duration Section */}
-            <div className="flex-1">
-              <h2 className="text-xl my-3 font-medium text-blue-600">
-                Days are you planning to travel?
-              </h2>
-              <Input
-                placeholder="Ex. 3"
-                type="number"
-                value={formData.noOfDays}
-                min={1}
-                
-                onChange={(e) => handleInputChange("noOfDays", e.target.value)}
-                className="rounded-md shadow border-gray-300 focus:ring-blue-500 focus:border-blue-500 w-full"
-              />
-            </div>
+          {/* Trip Duration Section */}
+          <div className="w-full md:w-1/2">
+            <h2 className="text-lg md:text-xl my-3 font-medium text-blue-600">
+              Days are you planning to travel?
+            </h2>
+            <Input
+              placeholder="Ex. 3"
+              type="number"
+              value={formData.noOfDays}
+              min={1}
+              onChange={(e) => handleInputChange("noOfDays", e.target.value)}
+              className="p-2 rounded-md shadow border-gray-300 focus:ring-blue-500 focus:border-blue-500 w-full"
+            />
           </div>
 
           {/* Budget Section */}
