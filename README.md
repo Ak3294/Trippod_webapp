@@ -2,6 +2,11 @@
 
 Trippod Webapp is an intelligent trip planning application that uses AI to help you design your perfect travel itinerary. With real-time data storage and seamless user experience, Trippod takes the hassle out of planning your trips and makes it fun and efficient.
 
+# Images
+![Screenshot (54)](https://github.com/user-attachments/assets/80b38771-9166-4b0c-b49d-d8cbf7388f76)
+![Screenshot (55)](https://github.com/user-attachments/assets/5afa0fc6-3152-4c8c-a3f0-db420b67a5c5)
+
+
 ---
 
 ## Features
